@@ -11,14 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/")
 public class customerController {
-
     CustomerService service = new CustomerService();
     @PostMapping("/fetchAccountDetails/")
     public UserDetails fetchUserDetails (@RequestBody AccountNumberRequest request){
-        UserDetails newuserDetails = service.fetchUserDetails(request.getAccountNumber());
-
-        UserDetails userDetails  =new UserDetails();
-        return userDetails ;
+        return service.fetchUserDetails(request.getAccountNumber());
     }
 
 }
