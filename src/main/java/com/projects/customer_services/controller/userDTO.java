@@ -1,4 +1,4 @@
-package com.projects.customer_services;
+package com.projects.customer_services.controller;
 
 public class userDTO {
     private String firstName;
