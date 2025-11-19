@@ -1,6 +1,7 @@
 package com.projects.customer_services.controller;
 
 public class userDTO {
+    //Use Getter and Setter annotations
     private String firstName;
     private String lastName;
     private String dob;

@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/")
 public class customerController {
     @PostMapping("/fetchAccountDetails/")
+    //the RequestBody  should be the customerNumber dto we created not the acutal acountnumber
     public userDTO fetchAccountDetails (@RequestBody Long accountNumber){
 
         userDTO UserDTO =new userDTO();
