@@ -39,20 +39,19 @@ public class CustomerService {
 
     private UserDetails fetchUserDetailsAfterDoingMaths(String accNo){
         char[] value = accNo.substring(accNo.length()-3).toCharArray();
-       int sum = 0;
-       if(findSumValue(value , sum) % 2 ==0){
+       if(findSumValue(value) % 2 ==0){
            return CustomerUtility.returnUmeshDetails();
        }
        return CustomerUtility.returnPrasanthDetails();
     }
 
-    private long findSumValue(char[] value, long sum){
-
-        if(sum<10) {
-            for (int i = 0; i < value.length; i++) {
-                sum += Character.getNumericValue(value[i]);
-            }
-            findSumValue(String.valueOf(sum).toCharArray(), sum);
+    private long findSumValue(char[] value){
+        int sum =0;
+        for(char c : value){
+            sum+= c - '0';
+        }
+        if(sum>9) {
+            return findSumValue(String.valueOf(sum).toCharArray());
         }
         return sum;
     }
